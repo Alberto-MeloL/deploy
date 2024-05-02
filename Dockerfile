@@ -6,7 +6,7 @@ FROM ubuntu:latest AS build
 RUN apt-get update && apt-get install -y openjdk-21-jdk
 
 #copia mimnha aplicação na maquina virtual
-COPY . main
+COPY . .
 
 RUN apt-get install maven -y
 
@@ -17,6 +17,6 @@ FROM openjdk:21-jdk-slim
 #expondo a porta da minha aplicação
 EXPOSE 8181
 
-COPY --from-build /target/game_store.jar /app.jar
+COPY . main /target/game_store.jar /app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
