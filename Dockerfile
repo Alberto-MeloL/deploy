@@ -6,7 +6,7 @@ FROM ubuntu:latest AS build
 RUN apt-get update && apt-get install -y openjdk-21-jdk
 
 #copia mimnha aplicação na maquina virtual
-COPY . .
+COPY . main
 
 RUN apt-get install maven -y
 
