@@ -16,7 +16,8 @@ FROM openjdk:21-jdk-slim
 
 #expondo a porta da minha aplicação
 EXPOSE 8181
+#se por barra no app.jar 
+COPY --from=build /target/game_store.jar app.jar
 
-COPY . main /target/game_store.jar /app.jar
-
+#aqui tbm tem que ter
 ENTRYPOINT ["java", "-jar", "app.jar"]
