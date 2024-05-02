@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <tr>
+        <th>Game Name</th>
+        <th>Developer</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="game: ${games}">
+<td th:text="${game.nome}"></td>
+<td th:text="${game.description}"></td>
+<td th:text="${game.developer}"></td>
+<td th:text="${game.price}"></td>
+    </tr>
+</body>
+</html>
